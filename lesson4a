@@ -98,26 +98,28 @@ void loop() {
 
     //Here's the section for control with hysterisis
 
-    if (tF>=tempset) {
-      tmem==1,
-      digitalWrite (8, HIGH);
-    }
+   
     if (tempreset<=tF && tF<=tempset && tmem==1) {
       digitalWrite (8, HIGH);
     }
-    else {
+     if (tF>=tempset) {
+      tmem==1,
+      digitalWrite (8, HIGH);
+    }
+     if (tF<tempreset)  {
       tmem==0, 
       digitalWrite (8, LOW);
     }
 
-    if (h>humset) {
-      hmem==1,
-      digitalWrite (4, HIGH);
-    }
+   
     if (humreset<=h && h<=humset && hmem==1) {
       digitalWrite (4, HIGH);
     }
-    else {
+     if (h>humset) {
+      hmem==1,
+      digitalWrite (4, HIGH);
+    }
+    if (h<humreset) {
       hmem==0,
       digitalWrite (4, LOW);
     }
